@@ -1,0 +1,9 @@
+node_modules/
+dist/
+build/
+npm/
+.env
+.env.local
+.env.*.local
+
+nodo/datos/geth.ipc

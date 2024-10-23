@@ -1,0 +1,12 @@
+Para crear una cuenta, billetera
+docker run -v "%cd%/pwd.txt:/p.txt" -v "%cd%/datos:/data" ethereum/client-go:latest account new --datadir /data --password /p.txt  
+
+"Como iniciar la base de datos de la blockchain en docker"
+Entramos en la carpeta nodo
+docker run -v "%cd%/genesis.json:/gen.json" -v "%cd%/datos:/data" ethereum/client-go:latest init --datadir /data /gen.json
+
+Finalmente inicializamos el nodo
+
+docker run --rm -v "%cd%/pwd.txt:/p.txt" -v "%cd%/datos:/data" -p 5556:8545 ethereum/client-go:v1.13.15 --datadir /data --unlock 5727c7f6a98f4d7abb603d72cd6448527b374bb5 --allow-insecure-unlock --mine --miner.etherbase 5727c7f6a98f4d7abb603d72cd6448527b374bb5 --password "./p.txt" --nodiscover --http --http.addr "0.0.0.0" --http.api "admin,eth,debug,miner,net,txpool,personal,web3" --http.corsdomain "*"
+
+

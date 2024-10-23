@@ -1,0 +1,8 @@
+Para poner en marcha el proyecto, en una consola que esté en la carpeta del proyecto (Front)
+
+Arrancamos con npm run dev
+
+El front utiliza ShadCN y este a su vez utiliza tailwind.
+
+OBtener el balance de una cuenta mediante CURL:
+curl --location "http://localhost:5556/" --header "Content-Type: application/json" --data "{\"jsonrpc\":\"2.0\",\"method\":\"eth_getBalance\",\"params\":[\"0x83cB55B13452A5759A345f203b8904657CC1372D\", \"latest\"],\"id\":1}"
